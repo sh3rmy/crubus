@@ -1,5 +1,4 @@
-Crubus
-======
+## Crubus
 
 **Crubus** is a **CRU**de **BU**ild **S**ystem for PHP projects.
 
@@ -21,7 +20,7 @@ Clone the repo to your desktop.
 
 Place the build.sh file into your project root directory.
 
-`cp crubus/build.sh YOUR_PROJECT_ROOT`
+`cp crubus/build.sh YOUR_PROJECT_ROOT/`
 
 Open build.sh with your favourite editor.
 
@@ -29,11 +28,13 @@ Open build.sh with your favourite editor.
 
 Set your project details.
 
-`PROJECT_NAME="Soap"`
-`PROJECT_VERSION="0.1.0"`
-`PROJECT_AUTHOR="Tyler Durden"`
-`PROJECT_EMAIL="tyler@paperstsoapcompany.com"`
-`PROJECT_WEBSITE="https://github.com/tyler/soap"`
+```
+PROJECT_NAME="Soap"
+PROJECT_VERSION="0.1.0"
+PROJECT_AUTHOR="Tyler Durden"
+PROJECT_EMAIL="tyler@paperstsoapcompany.com"
+PROJECT_WEBSITE="https://github.com/tyler/soap"
+```
 
 Save and exit then make sure the script is executable.
 
@@ -46,18 +47,20 @@ Save and exit then make sure the script is executable.
 
 Now that your project details are in, you or others can copy/clone your project and then run setup.
 
-`./build.sh -s` or `./build.sh --setup'
+`./build.sh -s` or `./build.sh --setup`
 
 This will ask for project root, output and source directories.
 
 Ideally your project root might look like this.
 
-`- YOUR_PROJECT_ROOT/`
-`  - build.sh`
-`  - output/`
-`  - source/`
-`    -  main.php`
-`    -  etc..`
+```
+- YOUR_PROJECT_ROOT/
+  - build.sh
+  - output/
+  - source/
+    -  main.php
+    -  etc..
+```
 
 In which case you just need to mash the enter key through these prompts.
 
@@ -68,9 +71,11 @@ To build your PHP file, run build.
 
 `./build.sh -b` or `./build.sh --build`
 
-It will search for PHP files in your source directory, look for any `require_once` or `include_once` statements, extract the file names from those statements and concatenate the contents of those files together (removing the `require_once`/`include_once` first) and producing a single PHP file in the format `PROJECT_NAME-PROJECT_VERSION.php` in the output directory. It will remove all empty lines. It will add back empty lines after lines just containing `}`, `<?php` or `*/`.
+It will search for PHP files in your source directory, look for any `require_once` or `include_once` statements, extract the file names from those statements and concatenate the contents of those files together (removing the `require_once`/`include_once` first) and producing a single PHP file in the format `PROJECT_NAME-PROJECT_VERSION.php` in the output directory. 
 
-It will not edit any of the original files, then can be read-only.
+It will remove all empty lines. But will add back empty lines after lines just containing `}`, `<?php` or `*/`.
+
+It will not edit any of the original files, they can be read-only.
 
 
 #### Clean your project directory
@@ -91,15 +96,19 @@ To see the script usage screen, run help.
 
 If you still having no idea what this does check out the example project in the tests folder.
 
-`git clone https://github.com/sh3rmy/crubus.git`
-`cd crubus/tests/example`
-`chmod +x build.sh`
-`./build.sh --setup`
+```
+git clone https://github.com/sh3rmy/crubus.git
+cd crubus/tests/example
+chmod +x build.sh
+./build.sh --setup
+```
 
 [ENTER] [ENTER] [ENTER]
 
-`./build.sh --build`
-`php output/example-0.1.0.php`
+```
+./build.sh --build
+php output/example-0.1.0.php
+```
 
 
 ## Want to help?
@@ -109,12 +118,13 @@ Awesome! To fix a bug or make script better, follow these steps.
 
 #### Contributing
 
-- Clone the repo
-- Checkout develop branch
+- Clone the repo `git clone https://github.com/sh3rmy/crubus.git && cd crubus`
+- Checkout develop branch `git checkout develop`
+- Pull from origin `git pull origin develop`
 - Create a new branch `git checkout -b improve-feature develop`
 - Make the appropriate changes in the script
 - Commit your changes `git commit -a -m 'Improve feature'`
-- Push to the branch `git push origin +improve-feature`
+- Push to origin `git push origin +improve-feature`
 - Create a Pull Request
 
 
@@ -127,6 +137,7 @@ Similarly, if you'd like to request a new feature, feel free to do so by opening
 
 ## Version history
 
+- 0.1.2: Fixed up more errors in README.md.
 - 0.1.1: Fixed up some errors in README.md.
 - 0.1.0: Initial release.
 

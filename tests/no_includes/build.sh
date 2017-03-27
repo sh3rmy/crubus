@@ -6,11 +6,11 @@
 #
 # project config
 #
-PROJECT_NAME="example"
+PROJECT_NAME="no_includes"
 PROJECT_VERSION="0.1.0"
-PROJECT_AUTHOR="John Doe"
-PROJECT_EMAIL="john@example.com"
-PROJECT_WEBSITE="https://github.com/john/example"
+PROJECT_AUTHOR="Michael David Edwards"
+PROJECT_EMAIL="michael@edwards.place"
+PROJECT_WEBSITE="https://github.com/sh3rmy/crubus"
 #
 #-----------------------------------------------------------------------------
 #

@@ -137,6 +137,7 @@ Similarly, if you'd like to request a new feature, feel free to do so by opening
 
 ## Version history
 
+- 0.1.3: Fixed bug which produced empty deliverable if no require_once or include_once found, even if main.php contained code.
 - 0.1.2: Fixed up more errors in README.md.
 - 0.1.1: Fixed up some errors in README.md.
 - 0.1.0: Initial release.

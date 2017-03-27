@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# CRUBUS v0.1.2
+# CRUBUS v0.1.3
 #
 #-----------------------------------------------------------------------------
 #
@@ -109,16 +109,13 @@ then
     #
     # find all php files that are require_once or include_once
     #
+    /bin/sed "1 i require_once('main.php');" | \
     /bin/sed "s/^require_once/include_once/" | \
     /bin/grep -oP "(?<=include_once\(').*(?='\);)" | \
     #
-    # remove duplicates and add main.php to top of list
+    # remove duplicates and first 2 lines all files on list, then cat together
     #
     /usr/bin/sort -u | \
-    /bin/sed "1 i main.php" | \
-    #
-    # remove first 2 lines all files on list and cat together
-    #
     /bin/sed 's/^/\/usr\/bin\/tail -n +2 -q "$DIR_SOURCE\//;s/$/";/' | \
     /bin/sh | \
     #
